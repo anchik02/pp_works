@@ -15,10 +15,11 @@ playlist = [
 ]
 
 current_song = 0  
-playing = False  
+playing = False
 
 running = True
 while running:
+    pygame.mixer_music.set_volume = 10
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False 

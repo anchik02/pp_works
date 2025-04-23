@@ -26,6 +26,7 @@ COIN_THRESHOLD = 5  # Increase enemy speed every 5 coins collected
 font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
+you_win = font.render("You Win", True, BLACK)
 
 background = pygame.image.load("c:/Users/Dell/Desktop/labki pp/pp_works/lab8/images/AnimatedStreet.png")
 coin_image = pygame.image.load("c:/Users/Dell/Desktop/labki pp/pp_works/lab8/images/Coin.png")  # Load coin image
@@ -118,6 +119,14 @@ while True:
     coins_display = font_small.render(f"Coins: {COINS}", True, BLACK)  # Show collected coins
     DISPLAYSURF.blit(scores, (10,10))
     DISPLAYSURF.blit(coins_display, (300, 10))  # Display coins in top right
+
+    if SCORE >=10:
+        DISPLAYSURF.fill(GREEN)
+        DISPLAYSURF.blit(you_win, (30,250))
+        pygame.display.update()
+        time.sleep(3)
+        pygame.quit()
+        sys.exit()
 
     # Moves and Re-draws all Sprites
     for entity in all_sprites:

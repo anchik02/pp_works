@@ -28,8 +28,9 @@ while running:
     sec_angle = -seconds * 6
     min_angle = -minutes * 6
 
-    screen.fill((255, 255, 255))  
+    screen.fill((100, 100, 100))  
     screen.blit(clock_img, (0, 0))  
+    
 
     # Вращаем стрелки и центрируем их
     rotated_sec = pygame.transform.rotate(sec_img, sec_angle)

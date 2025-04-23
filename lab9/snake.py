@@ -77,6 +77,8 @@ class Snake:
         """Рисует змею на экране."""
         for segment in self.body:
             pygame.draw.rect(SCREEN, GREEN, pygame.Rect(segment[0], segment[1], GRID_SIZE, GRID_SIZE))
+            if SCORE >= 5:
+                pygame.draw.rect(SCREEN, RED, pygame.Rect(segment[0], segment[1], GRID_SIZE, GRID_SIZE))
 
 # Класс Еды
 class Food:
